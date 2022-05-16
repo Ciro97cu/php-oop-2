@@ -26,7 +26,7 @@
     var_dump($product);
     echo "</pre>";
 
-    $user = new Customer(1, "Ciro", "Cusati", 25, true);
+    $user = new Customer(1, "Ciro", "Cusati", 25);
     $user->setDiscount(true);
 
     echo "<pre>";

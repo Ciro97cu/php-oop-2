@@ -1,4 +1,4 @@
-<?php 
+<?php
 class Customer
 {
     public $idCustomer;
@@ -6,22 +6,26 @@ class Customer
     public $customerSurname;
     public $customerAge;
     public $registered;
-    public $customerDiscount = 0;
+    public $customerDiscount;
 
-    function __construct($idCustomer, $customerName, $customerSurname, $customerAge, $registered)
+    function __construct($idCustomer, $customerName, $customerSurname, $customerAge)
     {
         $this->idCustomer = $idCustomer;
         $this->customerName = $customerName;
         $this->customerSurname = $customerSurname;
         $this->customerAge = $customerAge;
-        $this->registered = $registered;
     }
 
     public function setDiscount($registered)
     {
-        if ($registered === true) {
+        if ($registered == true) {
             $this->customerDiscount = 20;
             echo $this->customerDiscount;
+            $this->registered = $registered;
+        } else {
+            $this->customerDiscount = 0;
+            echo $this->customerDiscount;
+            $this->registered = $registered;
         }
     }
 }
