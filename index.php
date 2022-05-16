@@ -1,4 +1,7 @@
-<?php include "php/class.php" ?>
+<?php include_once "php/class.php" ?>
+<?php include_once "php/product/products.php" ?>
+<?php include_once "php/customer/customer.php" ?>
+<?php include_once "php/payment/creditCard.php" ?>
 <!DOCTYPE html>
 <html lang="it">
 
@@ -11,17 +14,31 @@
 
 <body>
     <?php
-    $ecommerce = new Ecommerce("Zalando", "Via Primo Levi", "0817623350", "Napoli", "Animali");
+    $ecommerce = new Ecommerce("Boolpet", "0817623350", "Animali");
     echo "<pre>";
     var_dump($ecommerce);
     echo "</pre>";
 
-    $result = new Products("ciao", "Zalando", "Via Primo Levi", "0817623350", "Napoli", "Animali");
+    $product = new Products("Boolpet", "0817623350", "Animali");
+    $product->setProducts("Food", "Scatoletta di carne con verdure", 1.50);
 
     echo "<pre>";
-    var_dump($result);
+    var_dump($product);
     echo "</pre>";
 
+    $user = new Customer(1, "Ciro", "Cusati", 25, true);
+    $user->setDiscount(true);
+
+    echo "<pre>";
+    var_dump($user);
+    echo "</pre>";
+
+    $creditCard = new CreditCard(1, "Ciro", "Cusati", 25, true);
+    $creditCard->setCreditInfo(5326987744514862, "Ciro", "Cusati", 10, 2025, 745);
+
+    echo "<pre>";
+    var_dump($creditCard);
+    echo "</pre>";
     ?>
 </body>
 

@@ -15,26 +15,13 @@ periodo particolare (es. da maggio ad agosto). -->
 class Ecommerce
 {
     public $name;
-    public $address;
     public $phoneNumber;
-    public $state;
     public $salesArea;
 
-    function __construct($name, $address, $phoneNumber, $state, $salesArea)
+    function __construct($name, $phoneNumber, $salesArea)
     {
         $this->name = $name;
-        $this->address = $address;
         $this->phoneNumber = $phoneNumber;
-        $this->state = $state;
         $this->salesArea = $salesArea;
-    }
-}
-
-class Products extends Ecommerce
-{
-    public $prova;
-    function __construct($prova)
-    {
-        $this->prova = $prova;
     }
 }
