@@ -1,7 +1,23 @@
-<?php include_once "php/class.php" ?>
 <?php include_once "php/products.php" ?>
+<?php include_once "php/foodProducts.php" ?>
+<?php include_once "php/toyProducts.php" ?>
 <?php include_once "php/customer.php" ?>
+<?php include_once "php/registeredCustomer.php" ?>
 <?php include_once "php/creditCard.php" ?>
+
+<!-- Oggi pomeriggio provate ad immaginare quali sono le classi 
+necessarie per creare uno shop online con le seguenti caratteristiche.
+L'e-commerce vende prodotti per gli animali.
+I prodotti saranno oltre al cibo, anche giochi, cucce, etc.
+L'utente potrà sia comprare i prodotti senza registrarsi, oppure iscriversi 
+e ricevere il 20% di sconto su tutti i prodotti.
+Il pagamento avviene con la carta di credito, che non deve essere scaduta.
+Dividete bene in classi e implementate gli attributi e i metodi necessari per 
+il corretto funzionamento dell'e-commerce. Il focus è sulla parte di slide condivisa oggi su Drive.
+BONUS:
+Alcuni prodotti (es. antipulci) avranno la caratteristica che saranno disponibili 
+solo in un periodo particolare (es. da maggio ad agosto). (modificato)  -->
+
 <!DOCTYPE html>
 <html lang="it">
 
@@ -14,31 +30,37 @@
 
 <body>
     <?php
-    $ecommerce = new Ecommerce("Boolpet", "0817623350", "Animali");
+
+    // food product
+    $food = new Foods("Delizioso Patè", "Patè solo agnello", "Oasy", "Food", 10, "Dry", "10/11/2025");
     echo "<pre>";
-    var_dump($ecommerce);
+    var_dump($food);
     echo "</pre>";
 
-    $product = new Products("Boolpet", "0817623350", "Animali");
-    $product->setProducts("Food", "Scatoletta di carne con verdure", 1.50);
-
+    // toy product
+    $toy = new Toys("Delizioso Patè", "Patè solo agnello", "Oasy", "Food", 10, "Leather", "Red");
     echo "<pre>";
-    var_dump($product);
+    var_dump($toy);
     echo "</pre>";
 
-    $user = new Customer(1, "Ciro", "Cusati", 25);
-    $user->setDiscount(true);
-
+    // customer
+    $user = new Customer("Ciro", "Cusati", 25, 3484954124, "Via Vittorio Emanuele");
     echo "<pre>";
     var_dump($user);
     echo "</pre>";
 
-    $creditCard = new CreditCard(1, "Ciro", "Cusati", 25, true);
-    $creditCard->setCreditInfo(5326987744514862, "Ciro", "Cusati", 10, 2025, 745);
+    // registered
+    $registeredUser = new Registered("Ciro", "Cusati", 25, 3484954124, "Via Vittorio Emanuele", 1, "ciro@gmail.com", "Ciro184nfancka", false);
+    echo "<pre>";
+    var_dump($registeredUser);
+    echo "</pre>";
 
+    // credit card
+    $creditCard = new CreditCard(5412487766952354, "Ciro", "Cusati", 10, 2025, 684);
     echo "<pre>";
     var_dump($creditCard);
     echo "</pre>";
+
     ?>
 </body>
 
