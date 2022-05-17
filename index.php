@@ -1,7 +1,7 @@
 <?php include_once "php/class.php" ?>
-<?php include_once "php/product/products.php" ?>
-<?php include_once "php/customer/customer.php" ?>
-<?php include_once "php/payment/creditCard.php" ?>
+<?php include_once "php/products.php" ?>
+<?php include_once "php/customer.php" ?>
+<?php include_once "php/creditCard.php" ?>
 <!DOCTYPE html>
 <html lang="it">
 
