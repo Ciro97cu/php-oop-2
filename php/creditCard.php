@@ -1,5 +1,5 @@
 <?php
-class CreditCard extends Customer
+class CreditCard
 {
     private $ccNumber;
     private $ccName;
@@ -8,7 +8,7 @@ class CreditCard extends Customer
     private $ccExpiryYear;
     private $ccCvv;
 
-    public function setCreditInfo($ccNumber, $ccName, $ccSurname, $ccExpiryMonth, $ccExpiryYear, $ccCvv)
+    public function __construct($ccNumber, $ccName, $ccSurname, $ccExpiryMonth, $ccExpiryYear, $ccCvv)
     {
         $this->ccNumber = $ccNumber;
         $this->ccName = $ccName;
@@ -16,5 +16,30 @@ class CreditCard extends Customer
         $this->ccExpiryMonth = $ccExpiryMonth;
         $this->ccExpiryYear = $ccExpiryYear;
         $this->ccCvv = $ccCvv;
+    }
+
+    public function getCcNumber()
+    {
+        return $this->ccNumber;
+    }
+    public function getCcName()
+    {
+        return $this->ccName;
+    }
+    public function getCcSurname()
+    {
+        return $this->ccSurname;
+    }
+    public function getCcExpiryMonth()
+    {
+        return $this->ccExpiryMonth;
+    }
+    public function getExpiryYear()
+    {
+        return $this->ccExpiryYear;
+    }
+    public function getCcCvv()
+    {
+        return $this->ccCvv;
     }
 }
