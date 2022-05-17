@@ -1,31 +1,39 @@
 <?php
 class Customer
 {
-    public $idCustomer;
-    public $customerName;
-    public $customerSurname;
-    public $customerAge;
-    public $registered;
-    public $customerDiscount;
+    protected $name;
+    protected $surname;
+    protected $age;
+    protected $phone;
+    protected $address;
 
-    function __construct($idCustomer, $customerName, $customerSurname, $customerAge)
+    public function __construct($name, $surname, $age, $phone, $address)
     {
-        $this->idCustomer = $idCustomer;
-        $this->customerName = $customerName;
-        $this->customerSurname = $customerSurname;
-        $this->customerAge = $customerAge;
+        $this->name = $name;
+        $this->surname = $surname;
+        $this->age = $age;
+        $this->phone = $phone;
+        $this->address = $address;
     }
 
-    public function setDiscount($registered)
+    public function getName()
     {
-        if ($registered == true) {
-            $this->customerDiscount = 20;
-            echo $this->customerDiscount;
-            $this->registered = $registered;
-        } else {
-            $this->customerDiscount = 0;
-            echo $this->customerDiscount;
-            $this->registered = $registered;
-        }
+        return $this->name;
+    }
+    public function getSurname()
+    {
+        return $this->surname;
+    }
+    public function getAge()
+    {
+        return $this->age;
+    }
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+    public function getAddress()
+    {
+        return $this->address;
     }
 }
